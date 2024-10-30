@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Selector</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Load CSS -->
+</head>
+<body>
+    <h1>Vyberte svoj 3D model</h1>
+
+    <!-- Category Selection -->
+    <div>
+        <label for="categorySelect">Select Body Part Category:</label>
+        <select id="categorySelect" onchange="updateModelButtons()">
+            <option value="">--Select Category--</option>
+            <option value="outer">Outer Parts</option>
+            <option value="inner">Inner Parts</option>
+        </select>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container" id="buttonContainer">
+        <!-- Buttons will be populated here based on category selection -->
+    </div>
+
+    <!-- Material Selection Section -->
+    <div>
+        <label for="materialSelect">Choose Material:</label>
+        <select id="materialSelect" onchange="applyMaterial()">
+            <option value="">--Select Material--</option>
+            <option value="plastic">Plastic</option>
+            <option value="titanium">Titanium</option>
+            <option value="PEEK">PEEK</option>
+        </select>
+    </div>
+
+    <!-- New Comment Section -->
+    <div>
+        <label for="comment">Add Comment:</label>
+        <textarea id="comment" placeholder="Enter your comment here"></textarea>
+    </div>
+
+    <div id="viewer"></div>
+
+    <!-- Load Three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    
+    <script src="script.js"></script> <!-- Load JavaScript -->
+</body>
+</html>
